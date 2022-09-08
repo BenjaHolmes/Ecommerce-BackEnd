@@ -38,25 +38,25 @@ A Live Demonstration of the Site can be found at
 Database Schema
 ![ecommerceSchema](https://user-images.githubusercontent.com/90611253/189169558-3c79c46c-4ec0-4121-9907-883b294bee39.png)
 * In the future i will add further tables to this, such as a table which holds reviews for each of the products
--
+
 
 
 ![register-screen-example](https://user-images.githubusercontent.com/90611253/189170723-3a932bd8-37a7-49d1-a901-6f8766dcfbef.png)
 * We can see in the screengrab that the user can enter their details on the EJS page
--
+
 
 
 ![created-user-in-db](https://user-images.githubusercontent.com/90611253/189170817-d3e43137-06f4-4cc6-ba52-b94eb2ab0b66.png)
 * Once the registration is completed, we can query the database to see that the new user has been added successfully.
 * We can also see that the password has been encrypted
--
+
 
 
 ![log-in-example](https://user-images.githubusercontent.com/90611253/189170937-3d12c678-071d-439d-84cd-e7aa48822827.png)
 
 ![successful-login-example](https://user-images.githubusercontent.com/90611253/189170960-a3b85173-2ae1-4191-84bf-bde29ecc846e.png)
 * Then, we can see that using these newly created details, the user is able to log in.
--
+
 
 
 
