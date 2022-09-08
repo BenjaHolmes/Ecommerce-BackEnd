@@ -35,11 +35,11 @@ A Live Demonstration of the Site can be found at
 
 ### Project Demonstration
 
-Database Schema
+##### Database Schema
 ![ecommerceSchema](https://user-images.githubusercontent.com/90611253/189169558-3c79c46c-4ec0-4121-9907-883b294bee39.png)
 * In the future i will add further tables to this, such as a table which holds reviews for each of the products
 
-Authorization Example
+##### Authorization Example
 
 ![register-screen-example](https://user-images.githubusercontent.com/90611253/189170723-3a932bd8-37a7-49d1-a901-6f8766dcfbef.png)
 * We can see in the screengrab that the user can enter their details on the EJS page
@@ -53,7 +53,7 @@ Authorization Example
 ![successful-login-example](https://user-images.githubusercontent.com/90611253/189170960-a3b85173-2ae1-4191-84bf-bde29ecc846e.png)
 * Then, we can see that using these newly created details, the user is able to log in.
 
-Examples of CRUD Operations
+##### Examples of CRUD Operations
 
 * Here are all possible CRUD Operations as seen on the Swagger Documentation
 
