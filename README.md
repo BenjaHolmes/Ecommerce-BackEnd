@@ -35,9 +35,9 @@ A Live Demonstration of the Site can be found at
 
 ### Project Demonstration
 
-Example of Database Schema
+Database Schema
 ![ecommerceSchema](https://user-images.githubusercontent.com/90611253/189169558-3c79c46c-4ec0-4121-9907-883b294bee39.png)
-
+* In the future i will add further tables to this, such as a table which holds reviews for each of the products
 
 
 
