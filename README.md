@@ -39,23 +39,27 @@ Database Schema
 ![ecommerceSchema](https://user-images.githubusercontent.com/90611253/189169558-3c79c46c-4ec0-4121-9907-883b294bee39.png)
 * In the future i will add further tables to this, such as a table which holds reviews for each of the products
 
-
+Authorization Example
 
 ![register-screen-example](https://user-images.githubusercontent.com/90611253/189170723-3a932bd8-37a7-49d1-a901-6f8766dcfbef.png)
 * We can see in the screengrab that the user can enter their details on the EJS page
-
-
 
 ![created-user-in-db](https://user-images.githubusercontent.com/90611253/189170817-d3e43137-06f4-4cc6-ba52-b94eb2ab0b66.png)
 * Once the registration is completed, we can query the database to see that the new user has been added successfully.
 * We can also see that the password has been encrypted
 
-
-
 ![log-in-example](https://user-images.githubusercontent.com/90611253/189170937-3d12c678-071d-439d-84cd-e7aa48822827.png)
 
 ![successful-login-example](https://user-images.githubusercontent.com/90611253/189170960-a3b85173-2ae1-4191-84bf-bde29ecc846e.png)
 * Then, we can see that using these newly created details, the user is able to log in.
+
+Examples of CRUD Operations
+
+* Here are all possible CRUD Operations as seen on the Swagger Documentation
+
+![swagger1](https://user-images.githubusercontent.com/90611253/189171747-9258f3f9-eec7-4281-827e-87991d3f9fc2.png)
+![swagger2](https://user-images.githubusercontent.com/90611253/189171772-06567735-945a-4d50-87d8-143ca5c24db8.png)
+![swagger3](https://user-images.githubusercontent.com/90611253/189171781-0370a977-852d-4370-8f28-dc6958d2eade.png)
 
 
 
