@@ -1,0 +1,793 @@
+openapi: 3.0.1
+info:
+  title: E-Commerce API
+  version: 1.0.0
+  description: A Basic CRUD API Example for an online store
+paths:
+  /api/user:
+    summary: CRUD Operations for User Accounts
+    get:
+      summary: Gets the data of all users
+      description: ''
+      operationId: get_users
+      responses:
+        '200':
+          description: A User object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    description: The user ID.
+                  first_name:
+                    type: string
+                    description: The user's first name.
+                  last_Name:
+                    type: string
+                    description: The user's last name.
+                  email:
+                    type: string
+                    description: The user's email address.
+                  password:
+                    type: string
+                    description: The users password
+        default:
+          description: Default error sample response
+      tags:
+        - User
+    post:
+      summary: Create a new user
+      description: Create a new user account
+      operationId: create_user
+      requestBody:
+          description: A User's New Details, to be Updated.
+          content:
+            application/json: 
+              schema:
+                type: object
+                properties:
+                  first_name:
+                    type: string
+                    description: The user's first name.
+                  last_Name:
+                    type: string
+                    description: The user's last name.
+                  email:
+                    type: string
+                    description: The user's email address.
+                  password:
+                    type: string
+                    description: The users password
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              examples:
+                Success:
+                  value: New User Record Successfully Added
+        default:
+          description: Default error sample response
+      tags:
+        - User
+  /api/user/{id}:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema: {}
+    summary: Performing actions on specific user files
+    description: Retreiving records based on id parameter
+    get:
+      summary: Gets a specific user
+      description: Search for a specific user based on the id parameter
+      operationId: get_specific_user
+      responses:
+        '200':
+          description: A User object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    description: The user ID.
+                  first_name:
+                    type: string
+                    description: The user's first name.
+                  last_Name:
+                    type: string
+                    description: The user's last name.
+                  email:
+                    type: string
+                    description: The user's email address.
+                  password:
+                    type: string
+                    description: The users password
+                  created_at:
+                    type: string 
+                    description: Date the record was added
+        default:
+          description: Default error sample response
+      tags:
+        - User
+    put:
+      summary: Update a users record
+      description: >-
+        Provided details will be updated for the user matching the provided id
+        parameter
+      operationId: update_existing_user
+      requestBody:
+          description: A User's New Details, to be Updated.
+          content:
+            application/json: 
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    description: The user ID.
+                  first_name:
+                    type: string
+                    description: The user's first name.
+                  last_Name:
+                    type: string
+                    description: The user's last name.
+                  email:
+                    type: string
+                    description: The user's email address.
+                  password:
+                    type: string
+                    description: The users password
+                  created_at:
+                    type: string 
+                    description: Date the record was added
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              examples:
+                Success:
+                  value: User Record Successfully Updated
+        default:
+          description: Default error sample response
+      tags:
+        - User
+    delete:
+      summary: Delete a user
+      description: Delete a User's record based on id parameter
+      operationId: Delete_user
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              examples:
+                Success:
+                  value: User Record Successfully Deleted
+        default:
+          description: Default error sample response
+      tags:
+        - User
+  /api/cart:
+    summary: Api Route for User's Carts
+    get:
+      summary: Get the data of all user's carts
+      description: ''
+      operationId: Get_carts
+      responses:
+        '200':
+          description: An Object of Carts.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    description: The carts ID.
+                  user_id:
+                    type: integer
+                    description: The user's id.
+                  created_at:
+                    type: string
+                    description: A timestamp of the cart's creation.
+                  
+        default:
+          description: Default error sample response
+      tags:
+        - Cart
+    post:
+      summary: Create a New Cart
+      description: User Cart generation
+      operationId: Create_Cart
+      requestBody:
+          description: The Cart must be attached to a user via their user id.
+          content:
+            application/json: 
+              schema:
+                type: object
+                properties:
+                  user_id:
+                    type: integer
+                    description: The user ID.
+      responses:
+      
+        default:
+          description: Default error sample response
+      tags:
+        - Cart
+  /api/cart/{id}:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema: {}
+    summary: CRUD operations for a specified cart
+    get:
+      summary: Get specified cart data
+      description: ''
+      operationId: Get_specific_cart
+      responses:
+        '200':
+          description: An Object of Carts.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    description: The carts ID.
+                  user_id:
+                    type: integer
+                    description: The user's id.
+                  created_at:
+                    type: string
+                    description: A timestamp of the cart's creation.
+        default:
+          description: Default error sample response
+      tags:
+        - Cart
+    delete:
+      summary: Delete an existing cart record
+      description: ''
+      operationId: delete_cart
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              examples:
+                Success:
+                  value: Cart Record Successfully Deleted
+        default:
+          description: Default error sample response
+      tags:
+        - Cart
+  /api/product:
+    summary: CRUD operations for product items
+    get:
+      summary: Get all of the existing product details
+      description: ''
+      operationId: get_products
+      responses:
+        '200':
+          description: A Product object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    description: The user ID.
+                  name:
+                    type: string
+                    description: The user's first name.
+                  price:
+                    type: integer
+                    description: The user's last name.
+                  category:
+                    type: string
+                    description: The user's email address.
+                  stock:
+                    type: integer
+                    description: The users password
+        default:
+          description: Default error sample response
+      tags:
+        - Product
+    post:
+      summary: Create a new Product
+      description: ''
+      operationId: Create_Product
+      requestBody:
+          description: Adding a new Product
+          content:
+            application/json: 
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    description: The user's first name.
+                  price:
+                    type: integer
+                    description: The user's last name.
+                  category:
+                    type: string
+                    description: The user's email address.
+                  stock:
+                    type: integer
+                    description: The users password
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              examples:
+                Success:
+                  value: New Product Record Successfully Added
+        default:
+          description: Default error sample response
+      tags:
+        - Product
+  /api/product/{id}:
+    summary: CRUD Operations for a specified product
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema: {}
+    get:
+      summary: Get One Specified Product
+      description: ''
+      operationId: get_specific_product
+      responses:
+        '200':
+          description: A User object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    description: The user ID.
+                  name:
+                    type: string
+                    description: The user's first name.
+                  price:
+                    type: integer
+                    description: The user's last name.
+                  category:
+                    type: string
+                    description: The user's email address.
+                  stock:
+                    type: integer
+                    description: The users password
+        default:
+          description: Default error sample response
+      tags:
+        - Product
+    put:
+      summary: Update a Product's info
+      description: ''
+      operationId: update_product
+      requestBody:
+          description: Updating the details of an Existing Product
+          content:
+            application/json: 
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    description: The user's first name.
+                  price:
+                    type: integer
+                    description: The user's last name.
+                  category:
+                    type: string
+                    description: The user's email address.
+                  stock:
+                    type: integer
+                    description: The users password
+      responses:
+        '200':
+          description: A User object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    description: The user ID.
+                  name:
+                    type: string
+                    description: The user's first name.
+                  price:
+                    type: integer
+                    description: The user's last name.
+                  category:
+                    type: string
+                    description: The user's email address.
+                  stock:
+                    type: integer
+                    description: The users password
+        default:
+          description: Default error sample response
+      tags:
+        - Product
+    delete:
+      summary: Delete a specified product
+      description: ''
+      operationId: delete_product
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              examples:
+                Success:
+                  value: Product Record Successfully Deleted
+        default:
+          description: Default error sample response
+      tags:
+        - Product
+  /api/cart_item:
+    summary: The products in each individual cart
+    get:
+      summary: Get a list of every item in every cart
+      description: ''
+      operationId: get_cart_item_list
+      responses:
+        '200':
+          description: A User object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  product_id:
+                    type: integer
+                    description: The user ID.
+                  cart_id:
+                    type: integer
+                    description: The user's first name.
+                  quantity:
+                    type: integer
+                    description: The user's last name.
+        default:
+          description: Default error sample response
+      tags:
+        - Cart_Item
+  /api/cart_item/{product_id}:
+    parameters:
+      - in: path
+        name: product_id
+        required: true
+        schema: {}
+    post:
+      summary: Add an item to a cart
+      description: ''
+      operationId: add_cart_item
+      requestBody:
+          description: Adding an item to a cart
+          content:
+            application/json: 
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    description: The order ID.
+                  user_id:
+                    type: integer
+                    description: Id representing the owner of this order.
+                  cart_id:
+                    type: integer
+                    description: Id representing the owner's cart which makes up the order.
+                  price_total:
+                    type: integer
+                    description: Amount of all the items in the cart.
+                  complete:
+                    type: boolean
+                    description: If the order has been completed or not.
+                  completed_at:
+                    type: integer
+                    description: Timestamp of when the order was completed if it was.
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              examples:
+                Success:
+                  value: Item Successfully Added to Cart
+        default:
+          description: Default error sample response
+      tags:
+        - Cart_Item
+    put:
+      summary: Update Quantity of item in cart
+      description: ''
+      operationId: Update_Quantity
+      requestBody:
+          description: Updating an item in a user's cart
+          content:
+            application/json: 
+              schema:
+                type: object
+                properties:
+                  user_id:
+                    type: integer
+                    description: Id representing the owner of this order.
+                  cart_id:
+                    type: integer
+                    description: Id representing the owner's cart which makes up the order.
+                  price_total:
+                    type: integer
+                    description: Amount of all the items in the cart.
+                  complete:
+                    type: boolean
+                    description: If the order has been completed or not.
+                  completed_at:
+                    type: integer
+                    description: Timestamp of when the order was completed if it was.
+      responses:
+        '200':
+          description: A User object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    description: The order ID.
+                  user_id:
+                    type: integer
+                    description: Id representing the owner of this order.
+                  cart_id:
+                    type: integer
+                    description: Id representing the owner's cart which makes up the order.
+                  price_total:
+                    type: integer
+                    description: Amount of all the items in the cart.
+                  complete:
+                    type: boolean
+                    description: If the order has been completed or not.
+                  completed_at:
+                    type: integer
+                    description: Timestamp of when the order was completed if it was.
+        default:
+          description: Default error sample response
+      tags:
+        - Cart_Item
+    delete:
+      summary: Delete an item from cart
+      description: ''
+      operationId: delete_Cart_Item
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              examples:
+                Success:
+                  value: Item Successfully Deleted from Cart
+        default:
+          description: Default error sample response
+      tags:
+        - Cart_Item
+  /api/orders:
+    summary: CRUD Operations for Order History
+    get:
+      summary: Get all order history
+      description: ''
+      operationId: get_orders
+      responses:
+        '200':
+          description: A User object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    description: The order ID.
+                  user_id:
+                    type: integer
+                    description: Id representing the owner of this order.
+                  cart_id:
+                    type: integer
+                    description: Id representing the owner's cart which makes up the order.
+                  price_total:
+                    type: integer
+                    description: Amount of all the items in the cart.
+                  complete:
+                    type: boolean
+                    description: If the order has been completed or not.
+                  completed_at:
+                    type: integer
+                    description: Timestamp of when the order was completed if it was.
+        default:
+          description: Default error sample response
+      tags:
+        - Orders
+    post:
+      summary: 'Add a new order '
+      description: ''
+      requestBody:
+          description: Updating an item in a user's cart
+          content:
+            application/json: 
+              schema:
+                type: object
+                properties:
+                  user_id:
+                    type: integer
+                    description: Id representing the owner of this order.
+                  cart_id:
+                    type: integer
+                    description: Id representing the owner's cart which makes up the order.
+                  price_total:
+                    type: integer
+                    description: Amount of all the items in the cart.
+                  complete:
+                    type: boolean
+                    description: If the order has been completed or not.
+                  completed_at:
+                    type: integer
+                    description: Timestamp of when the order was completed if it was.
+      operationId: add_order
+      responses:
+        '200':
+          description: A User object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    description: The order ID.
+                  user_id:
+                    type: integer
+                    description: Id representing the owner of this order.
+                  cart_id:
+                    type: integer
+                    description: Id representing the owner's cart which makes up the order.
+                  price_total:
+                    type: integer
+                    description: Amount of all the items in the cart.
+                  complete:
+                    type: boolean
+                    description: If the order has been completed or not.
+                  completed_at:
+                    type: integer
+                    description: Timestamp of when the order was completed if it was.
+        default:
+          description: Default error sample response
+      tags:
+        - Orders
+  /api/orders/{id}:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema: {}
+    get:
+      summary: Get a specific order
+      description: ''
+      operationId: get_specific_order
+      responses:
+        '200':
+          description: A User object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    description: The order ID.
+                  user_id:
+                    type: integer
+                    description: Id representing the owner of this order.
+                  cart_id:
+                    type: integer
+                    description: Id representing the owner's cart which makes up the order.
+                  price_total:
+                    type: integer
+                    description: Amount of all the items in the cart.
+                  complete:
+                    type: boolean
+                    description: If the order has been completed or not.
+                  completed_at:
+                    type: integer
+                    description: Timestamp of when the order was completed if it was.
+        default:
+          description: Default error sample response
+      tags:
+        - Orders
+    put:
+      summary: Update existing order
+      description: ''
+      operationId: Update_order
+      requestBody:
+          description: Updating an item in a user's cart
+          content:
+            application/json: 
+              schema:
+                type: object
+                properties:
+                  user_id:
+                    type: integer
+                    description: Id representing the owner of this order.
+                  cart_id:
+                    type: integer
+                    description: Id representing the owner's cart which makes up the order.
+                  price_total:
+                    type: integer
+                    description: Amount of all the items in the cart.
+                  complete:
+                    type: boolean
+                    description: If the order has been completed or not.
+                  completed_at:
+                    type: integer
+                    description: Timestamp of when the order was completed if it was.
+      responses:
+        '200':
+          description: A User object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    description: The order ID.
+                  user_id:
+                    type: integer
+                    description: Id representing the owner of this order.
+                  cart_id:
+                    type: integer
+                    description: Id representing the owner's cart which makes up the order.
+                  price_total:
+                    type: integer
+                    description: Amount of all the items in the cart.
+                  complete:
+                    type: boolean
+                    description: If the order has been completed or not.
+                  completed_at:
+                    type: integer
+                    description: Timestamp of when the order was completed if it was.
+        default:
+          description: Default error sample response
+      tags:
+        - Orders
+    delete:
+      summary: Delete specific order
+      description: ''
+      operationId: delete_order
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              examples:
+                Success:
+                  value: Order Successfully Deleted
+        default:
+          description: Default error sample response
+      tags:
+        - Orders
