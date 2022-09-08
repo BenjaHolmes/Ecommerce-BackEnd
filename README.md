@@ -53,7 +53,7 @@ A Live Demonstration of the Site can be found at
 ![successful-login-example](https://user-images.githubusercontent.com/90611253/189170960-a3b85173-2ae1-4191-84bf-bde29ecc846e.png)
 * Then, we can see that using these newly created details, the user is able to log in.
 
-##### Examples of CRUD Operations
+<ins> ##### Examples of CRUD Operations </ins>
 
 * Here are all possible CRUD Operations as seen on the Swagger Documentation
 
