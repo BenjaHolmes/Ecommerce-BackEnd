@@ -12,7 +12,7 @@ perform various actions required in ecommerce, for example relating to shopping 
  Being the first project, i have done of this kind, it was fairly difficult, particularly designing the relationships between tables in my database 
  and working out how best to implement them, using passport.js to authorize users and working with swagger for documentation.
  
- In the next project, this backend will be used with a front end to create a full-stack ecommerce site, so i will have more opportunities to add to my database and add more features to the backend. As the front end is still to be
+ In the next project, this backend will be used with a front end to create a full-stack ecommerce site, so i will have more opportunities to add to my database and to add more features to the backend. As the front end is still to be
  developed, i have used EJS pages here to let the user register/login.
 
 ### Live Demonstration of the Site
