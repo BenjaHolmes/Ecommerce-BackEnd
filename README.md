@@ -15,10 +15,6 @@ perform various actions required in ecommerce, for example relating to shopping 
  In the next project, this backend will be used with a front end to create a full-stack ecommerce site, so i will have more opportunities to add to my database and to add more features to the backend. As the front end is still to be
  developed, i have used EJS pages here to let the user register/login.
 
-### Live Demonstration of the Site
-
-A Live Demonstration of the Site can be found at 
-
 ### Languages and Libraries Used
 
 * Node.js
